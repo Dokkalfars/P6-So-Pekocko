@@ -8,7 +8,11 @@ const app = express();
 const userRoutes = require('./routes/User');
 const sauceRoutes = require('./routes/sauce');
 
-mongoose.connect('mongodb+srv://tpluchart:zyxXso9dDCJ8eg3e@cluster0.rdnbl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+require("dotenv").config();
+const ID = process.env.ID;
+const MDP = process.env.MDP;
+
+mongoose.connect(`mongodb+srv://${ID}:${MDP}@cluster0.rdnbl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
 { useNewUrlParser: true,
 useUnifiedTopology: true })
 .then(() => console.log('connexion à MongoDB réussie !'))

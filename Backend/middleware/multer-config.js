@@ -22,7 +22,7 @@ const storage = multer.diskStorage({
 });
 
 const mimeTypeIsValid = (ext,req) => {
-    if(ext!="jpg"&&ext!="jpeg"&&ext!="png"&&ext!="webp"&&ext!="gif") {
+    if(ext!="jpg"&&ext!="jpeg"&&ext!="png"&&ext!="webp") {
         req.body.errorMessage = "Le format de l'image n'est pas valide!";
     }
 }
